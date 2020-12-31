@@ -48,7 +48,9 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-    return [sum(sum(a,b)[0],c)[0], multiply(multiply(a,b)[0],c)[0], "4 and 7 and 5 sum to 16.", "The product of 4 and 7 and 5 is 140."]
+    var totalSum = sum(sum(a,b)[0],c)[0]
+    var totalMultiply = multiply(multiply(a,b)[0],c)[0]
+    return [totalSum, totalMultiply, `${a} and ${b} and ${c} sum to ${totalSum}.`, `The product of ${a} and ${b} and ${c} is ${totalMultiply}.`]
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
@@ -74,7 +76,7 @@ function sumArray(sumArr) { //eslint-disable-line
     for(let i = 0; i<sumArr.length; i++){
         total = sum(total, sumArr[i])[0]
     }
-    return [total, "2,3,4 was passed in as an array of numbers, and 9 is their sum."]
+    return [total, `${sumArr} was passed in as an array of numbers, and ${total} is their sum.`]
 }
 
 // Here is the test for sumArray(); uncomment it to run it
@@ -99,7 +101,7 @@ function multiplyArray(multArr) { //eslint-disable-line
     for(let i =0; i<multArr.length; i++){
         total = multiply(total, multArr[i])[0]
     }
-    return [total, "The numbers 2,3,4 have a product of 24."]
+    return [total, `The numbers ${multArr} have a product of ${total}.`]
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
